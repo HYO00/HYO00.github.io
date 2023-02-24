@@ -81,7 +81,7 @@ theme_mode:   # [light|dark]
 img_cdn: 'https://chirpy-img.netlify.app'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: '/assets/img/profile.JPG'
+avatar: '/assets/img/profile.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
@@ -159,7 +159,7 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
-      path: assets/img/favicons
+      path: assets/img/favicon_io
     values:
       swcache: true
   - scope:
