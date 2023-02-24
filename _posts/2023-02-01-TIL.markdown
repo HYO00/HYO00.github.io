@@ -1,0 +1,98 @@
+---
+title: 리액트 폴더 구조
+date: 2023-02-01 15:18:36 +0900
+categories: [TIL, 2월]
+tags: [React]
+---
+### 리액트 폴더 구조
+
+포스팅 글 정리 
+
+[https://dev.to/fpaghar/folder-structuring-techniques-for-beginner-to-advanced-react-projects-30d7?utm_source=oneoneone](https://dev.to/fpaghar/folder-structuring-techniques-for-beginner-to-advanced-react-projects-30d7?utm_source=oneoneone)
+
+
+리액트는 엄청 유연한 라이브러이다. 그래서 프로젝트를 구조화 하는데 어렵다. (공감)
+
+처음 프로젝트를 할 때 리액트의 폴더 구조를 어떤식으로 잡아야 되는지 어려움을 겪었다. 
+
+scr 폴더 밖에서 폴더 및 파일은 프로젝트에 따라 많이 달라질 수 있다. 
+
+그렇기 때문에 리액트 src 폴더안에서 구성하는 방법 위주로 봐보자.
+
+**First Folder Structure: Simple**
+
+src > test, components, hooks
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/98b82d6f-b193-4beb-a136-d1cbb9b59491/Untitled.png)
+
+보통 대부분의 사람들은 컴포넌트 폴더와 훅 폴더 두 가지를 만들어 사용한다. 이건 10—15개의 컴포넌트 정도라면 나쁘지 않은 방법이라 한다. 
+
+Hook
+
+어떤 프로젝트에서도 훅 폴더는 보통 사용된다. 보통 하나 이상의 커스텀 훅을 사용하니깐 모아 놓는건 유용 
+
+Components
+
+컴포넌트 폴더는 많아지면 복잡시렵다. 하지만 작은 프로젝트의 경우 15개 정도라면 괜춘
+
+Tests
+
+작은 프로젝트의 경우에 해당 폴더에 테스틀 코드를 작성한다. (test code를 따로 분리하는지 몰랐다…) 프로젝트의 규모가 커질 수록 이 방법은 추천하지 않는다고 한다. 왜?  아래 글을 더 읽어보자 
+
+장점 - 단순 
+
+단점 - photos, utility functions, React contexts, etc 사용자가 어떻게 관리할지 정한다. 너무 단순한 폴더 구조는 프로젝트가 커짐에따라 엉망이 되기 쉽다. 최소한 중간 폴더를 하나 더 쓸필요 있다. 
+
+ 
+
+**Second Folder Structure: Intermediate**
+
+관련 페이지 빠르게 찾을 수 있다.
+
+pages, components, hooks, assets, context, data, Utils, 
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a628f43-bf30-4124-bd15-45b5f8e0ce70/Untitled.png)
+
+pages - 해당 페이지의 관련된 파일들로 구성되어있음. 컴포넌트, 훅 등
+
+하나의 폴더에 관련된 코드들이 집중되면 앺프리케이션을 이해하는데 쉽다.
+
+Components - sub folder 분리하여 관리 
+
+Hook - 글로벌 훅, 페이지에 관련 훅들어 있음 
+
+Assets - hotos, CSS files, font files, etc (코딩과 관련되지 않는 모든것)
+
+Context - context file 모음 
+
+Data - 프로그램에서 사용되는 파일 such as JSON files that contain information used in our programs (store items, theme information, etc) and a file containing global constant variables may be kept in this subdirectory.
+
+Utils - 순수함수 모음 , 상수
+
+장점 - src 폴더 아래 파일이 아닌 폴더로 구조화 끼리끼리 
+
+단점 
+
+**Third Folder Structure: Advanced**
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/49f557b8-66cb-4c82-a812-de59462974b6/Untitled.png)
+
+**features folder  is a more elegant way to group code together**
+
+기능별로 그룹화
+
+layout folder - 레이아웃 기반 구성 요소 sidebars, navigations, contaiuners, etc
+
+services - 외부 API ,javaScript modules
+
+장점 - 코드 추가 및 업데이트 단순,
+
+단점 - 시스템 복잡성
+
+---
+단어 
+ 
+go over - inspect, extremely - greatly, ever so, jolly, disperse - melt, break up, come apart, beyond - over
+leaves it up to - 에 맡긴다, merely - only, but, tailor -  재단사, 짓다 compose, pertinet - proper, relative
+subdivide - 나누다. 세분화하다. intricate - 뒤얽힌, convoulted
+overlap -  겹치다 drawback - weakness
